@@ -1,0 +1,22 @@
+C2 servers = Command and COntrol servers
+-It listens for upcoming data from the implant and lets you interact with it.
+-Just a server that your malware reports back to
+
+Basic Architecture Overview
+
+Target Machines
+- keylogger.py runs
+- sender.py on separate thread so it doesn't block the keylogger
+- captureskeystrokes
+- encrypts + sends via HTTP
+
+My Machine
+- server.py listens
+- receives live logs
+- displays in terminal
+
+keylogger.py will be needing libs to talk to windows internals
+
+psutil - reads process info
+pynput -talks to the OS keyboard event system
+requests - makes http calls to your kali C2
